@@ -15,7 +15,7 @@ Born2beRoot is an introduction to Linux system administration. I installed Debia
 
 ### Tools compared
 
-- **Debian and Rocky Linux.** I chose Debian because the subject recommends it for a first server and its installer provided the encrypted LVM layout I needed. Debian uses APT and `.deb` packages. Stable releases favor predictable updates, so newer software features can arrive later. Rocky uses DNF and RPM packages and is a good fit for learning a RHEL-compatible system. Adjusting SELinux policy for the project adds work to the initial Rocky setup.
+- **Debian and Rocky Linux.** I chose Debian because the subject recommends it for a first server and its installer provided the encrypted LVM layout I needed. Debian uses `apt` and `.deb` packages. Stable releases favor predictable updates, so newer software features can arrive later.
 - **AppArmor vs SELinux.** AppArmor applies program profiles with rules based on file paths. SELinux makes access decisions using security labels. The subject assigns AppArmor to Debian and SELinux to Rocky.
 - **UFW and firewalld.** UFW makes a small set of port rules easy to read. Firewalld groups rules into zones, which helps when interfaces or networks need different policies. One incoming SSH port is all this Debian setup needs, so UFW fits well.
 - **VirtualBox and UTM.** VirtualBox was available on the campus machines and is the subject's default. Its NAT port forwarding lets me connect to the VM from the campus terminal. UTM is the fallback allowed by the subject and can emulate x86 on Apple Silicon, at a performance cost compared with running a matching guest architecture.
