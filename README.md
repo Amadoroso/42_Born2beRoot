@@ -15,10 +15,10 @@ Born2beRoot is an introduction to Linux system administration. I installed Debia
 
 ### Tools compared
 
-- **Debian and Rocky Linux.** I chose Debian because the subject recommends it for a first server and its installer provided the encrypted LVM layout I needed. Debian uses `apt` and `.deb` packages. Stable releases favor predictable updates, so newer software features can arrive later.
-- **AppArmor vs SELinux.** AppArmor applies program profiles with rules based on file paths. SELinux makes access decisions using security labels. The subject assigns AppArmor to Debian and SELinux to Rocky.
-- **UFW and firewalld.** UFW makes a small set of port rules easy to read. Firewalld groups rules into zones, which helps when interfaces or networks need different policies. One incoming SSH port is all this Debian setup needs, so UFW fits well.
-- **VirtualBox and UTM.** VirtualBox was available on the campus machines and is the subject's default. Its NAT port forwarding lets me connect to the VM from the campus terminal. UTM is the fallback allowed by the subject and can emulate x86 on Apple Silicon, at a performance cost compared with running a matching guest architecture.
+- **Debian and Rocky Linux.** I chose Debian because the subject recommends it for a first server and its installer let me set up the encrypted LVM layout I needed. Debian Stable favors predictable updates, so newer software features can take longer to arrive. Rocky Linux is designed to be compatible with Red Hat Enterprise Linux  and is much more Enterprise focused, being more complex to setup. Debian uses AppArmor and UFW, while Rocky uses SELinux and firewalld.
+- **AppArmor and SELinux**. AppArmor gives a program a profile that specifies which file paths it can access. SELinux gives processes and files security labels, then uses rules to decide which labels can access which.
+- **UFW and firewalld.** Both manage firewall rules. UFW uses simple commands to allow or block ports. firewalld uses zones so different networks can have different rules. I used UFW on Debian to allow incoming SSH on port `4242`.
+- **VirtualBox and UTM.** Both run virtual machines. I used VirtualBox because it was available on campus and is the subject’s first choice. I set up port forwarding so I could connect to my VM over SSH from the campus terminal. UTM is the allowed fallback and can emulate an x86 machine on an Apple Silicon Mac.
 
 ## Instructions
 
